@@ -17,6 +17,8 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@tanstack/react-table": "^8.21.3",
+    "api-client": "^2.0.2",
+    "axios": "^1.18.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.22.0",
