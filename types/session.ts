@@ -1,25 +1,10 @@
-export interface Session {
-  id: number
-  organiser_id: number
+export type Session = {
+  session_id: number
+  room_id: number
   title: string
   speaker: string
-  track: string
-  room: string
+  capacity: number
+  date: string
   start_time: string
   end_time: string
-  capacity: number
-  enrolled_count?: number
-  is_full?: boolean
 }
-
-export interface CreateSessionPayload {
-  title: string
-  speaker: string
-  track: string
-  room: string
-  start_time: string
-  end_time: string
-  capacity: number
-}
-
-export type UpdateSessionPayload = CreateSessionPayload
