@@ -11,7 +11,7 @@ import { useMountedFetch } from "@/hooks/use-mounted-fetch"
 import { getAdminStats } from "@/services/admin"
 import { getSessions } from "@/services/session"
 import type { AdminStats } from "@/types/admin"
-import type { Session } from "@/types/session"
+import { isSessionFull, type Session } from "@/types/session"
 import { toast } from "sonner"
 
 export default function AdminDashboardView() {
@@ -37,7 +37,7 @@ export default function AdminDashboardView() {
 
   useMountedFetch(loadData)
 
-  const fullSessions = sessions.filter((session) => session.is_full).length
+  const fullSessions = sessions.filter(isSessionFull).length
 
   return (
     <div className="space-y-8">
