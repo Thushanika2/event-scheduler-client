@@ -12,6 +12,10 @@ export interface Session {
   is_full?: boolean
 }
 
+export function isSessionFull(session: Session): boolean {
+  return session.is_full ?? (session.enrolled_count ?? 0) >= session.capacity
+}
+
 export interface CreateSessionPayload {
   title: string
   speaker: string
