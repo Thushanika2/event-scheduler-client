@@ -1,11 +1,15 @@
+import { SiteHeader } from "@/components/site-header"
 import { LoginForm } from "@/components/login-form"
 
-export default function EventLoginPage() {
+export default function LoginPage() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <LoginForm />
+    <>
+      <SiteHeader />
+      <div className="mx-auto flex min-h-[calc(100svh-65px)] max-w-md items-center p-6">
+        <div className="w-full">
+          <LoginForm />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
