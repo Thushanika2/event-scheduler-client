@@ -12,7 +12,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import Link from "next/link"
-import { Session } from "@/types/session"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import {
@@ -24,9 +23,20 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
+type LegacySession = {
+  session_id: number
+  room_id: number
+  title: string
+  speaker: string
+  capacity: number
+  date: string
+  start_time: string
+  end_time: string
+}
+
 export default function SessionListView() {
-  const [sessions, setSessions] = useState<Session[]>([])
-  const [sessionToDelete, setSessionToDelete] = useState<Session | null>(null)
+  const [sessions, setSessions] = useState<LegacySession[]>([])
+  const [sessionToDelete, setSessionToDelete] = useState<LegacySession | null>(null)
   const [isDeleting, setIsDeleting] = useState(false)
 
   const handleDelete = async () => {
